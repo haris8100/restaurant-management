@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "b62f48e4-b747-4ff1-80d4-9df8805a6c45",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28566701"
+	},
+	"item": [
+		{
+			"name": "Restaurant & Menu",
+			"item": [
+				{
+					"name": "Add category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dessert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Restaurant B",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "Chennai",
+									"type": "text"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/Hari/Downloads/Res-1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/restaurant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List restaurant with categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add category to restuarant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurant/6895db57-896e-433a-bc55-65291c4b933b/categories/55dc7c94-a1f5-4dbf-807d-265da2d32e9e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant",
+								"6895db57-896e-433a-bc55-65291c4b933b",
+								"categories",
+								"55dc7c94-a1f5-4dbf-807d-265da2d32e9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add dish to restuarant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Dish B",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Dish B description",
+									"type": "text"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/Hari/Downloads/Dish 2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/restaurant/6895db57-896e-433a-bc55-65291c4b933b/dishes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant",
+								"6895db57-896e-433a-bc55-65291c4b933b",
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dishes in restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurant/6895db57-896e-433a-bc55-65291c4b933b/dishes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant",
+								"6895db57-896e-433a-bc55-65291c4b933b",
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"2ebc77e8-2581-4b04-a02f-bbdeb5b23538\",\r\n    \"dishIds\": [\"d0d649b6-dde0-4b6c-8c56-4aae59333dfc\",\"671ca26f-57cb-46a8-a7bb-9d0814759cf6\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 50.05\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/363771c2-2a80-41be-bd29-e621d44677c1/pay",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"363771c2-2a80-41be-bd29-e621d44677c1",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"password\": \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
